@@ -1,6 +1,6 @@
 class Admin::DashboardController < ApplicationController
   #adds authentication for the dashboard info
-  http_basic_authenticate_with name: ENV["USERNAME"], password: ENV["PASSWORD"]  
+  http_basic_authenticate_with name: ENV["HTTP_USERNAME"], password: ENV["HTTP_PASSWORD"]  
   
   def show
   
