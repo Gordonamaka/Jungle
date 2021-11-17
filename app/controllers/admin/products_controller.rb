@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  
+  #adds authentication for the admin, password and username stored in .env file
   http_basic_authenticate_with name: ENV["USERNAME"], password: ENV["PASSWORD"]
 
   def index
