@@ -21,7 +21,6 @@ Rails.application.routes.draw do
 
   # Adds about page
   get '/about' => 'about#index'
-
   
   #login form 
   get '/logout' => 'sessions#destroy'
