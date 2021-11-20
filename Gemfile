@@ -36,6 +36,14 @@ gem 'rmagick'
 gem 'stripe'
 gem 'faker'
 
+#additional test gems
+group :test do
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+end
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
