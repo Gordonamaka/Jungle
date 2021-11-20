@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2.
 
 ## Additional Steps for Apple M1 Machines
 
@@ -8,6 +8,14 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 1. Install ImageMagick `brew install imagemagick imagemagick@6 --build-from-source`
 2. Remove Gemfile.lock
 3. Replace Gemfile with version provided [here](https://gist.githubusercontent.com/FrancisBourgouin/831795ae12c4704687a0c2496d91a727/raw/ce8e2104f725f43e56650d404169c7b11c33a5c5/Gemfile)
+
+## Screenshots
+
+![Products Page](https://github.com/Gordonamaka/Jungle/blob/master/docs/Products.png?raw=true)
+
+![Cart Page](https://github.com/Gordonamaka/Jungle/blob/master/docs/Cart-page.png?raw=true)
+
+![Order Details Page](https://github.com/Gordonamaka/Jungle/blob/master/docs/Order-Details.png?raw=true)
 
 ## Setup
 
