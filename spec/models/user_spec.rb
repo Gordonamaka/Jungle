@@ -19,49 +19,40 @@ RSpec.describe User, type: :model do
 
     end 
 
-    it "should display Last name can't be blank!" do 
+    it "should display Last name can't be blank" do 
       @user = User.new({password:'Wario', password_confirmation: 'Wario', email: 'Wario@gmail.com', first_name: "Catty", last_name: nil })
 
       @user.valid?
       expect(@user.errors.full_messages).to include("Last name can't be blank")
     end 
 
-    it "should display email can't be blank!" do 
+    it "should display email can't be blank" do 
       @user = User.new({password:'Wario', password_confirmation: 'Wario', email: nil, first_name: "Catty", last_name: "Savage" })
 
       @user.valid?
       expect(@user.errors.full_messages).to include("Email can't be blank")
     end 
 
-    it "should display password can't be blank!" do 
+    it "should display password can't be blank" do 
       @user = User.new({password:nil, password_confirmation: 'Wario', email: 'Wario@gmail.com', first_name: "Catty", last_name: "Savage" })
 
       @user.valid?
       expect(@user.errors.full_messages).to include("Password can't be blank")
     end 
 
-    it "should display password can't be less than 5 characters!" do 
+    it "should display password can't be less than five characters" do 
       @user = User.new({password: "sup", password_confirmation: "sup", email: 'Wario@gmail.com', first_name: "Catty", last_name: "Savage" })
 
       @user.valid?
       expect(@user.errors.full_messages).to include("Password is too short (minimum is 5 characters)")
     end 
 
-    it "should display password confirmation can't be less than 5 characters!" do 
+    it "should display password confirmation can't be less than five characters" do 
       @user = User.new({password: "sup", password_confirmation: "sup", email: 'Wario@gmail.com', first_name: "Catty", last_name: "Savage" })
 
       @user.valid?
       expect(@user.errors.full_messages).to include("Password is too short (minimum is 5 characters)")
     end 
-
-
-    it "should display password confirmation can't be less than 5 characters!" do 
-      @user = User.new({password: "sup", password_confirmation: "sup", email: 'Wario@gmail.com', first_name: "Catty", last_name: "Savage" })
-
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Password is too short (minimum is 5 characters)")
-    end 
-
 
     it "should display password does not match the password confirmation" do 
       @user = User.new({password: "Wario", password_confirmation: "sup", email: 'Wario@gmail.com', first_name: "Catty", last_name: "Savage" })
