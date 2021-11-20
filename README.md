@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2.
+A mini e-commerce application built with Rails 4.2. The webapp comes equipped with product database, user login & strip credit card authentication.
 
 ## Additional Steps for Apple M1 Machines
 
