@@ -1,38 +1,46 @@
-<h1>Signup Form</h1>
+<h1>Sign-up Form</h1>
 
-<%= form_for :user, url: '/users' do |x| %>
+<%= form_for :user, url: '/users' do |t| %>
 
   <div class="form-group">
 
-    <%= x.label(:name, "Name:") %>
+    <%= t.label(:first_name, "first_name:") %>
 
-    <%= x.text_field :name , class: "form-control", placeholder: "Name"%>
+    <%= t.text_field :first_name , class: "form-control", placeholder: "First name"%>
+  
+  </div>
+
+  <div class="form-group">
+
+    <%= t.label(:last_name, "last_name:") %>
+
+    <%= t.text_field :last_name , class: "form-control", placeholder: "Last name"%>
   
   </div>
   
   <div class="form-group">
   
-    <%= x.label(:email, "Email:") %>
+    <%= t.label(:email, "Email:") %>
   
-    <%= x.text_field :email , class: "form-control", placeholder: "Email"%>
+    <%= t.text_field :email , class: "form-control", placeholder: "Email"%>
   
   </div>
   
   <div class="form-group">
   
-    <%= x.label(:password, "Password:") %>
+    <%= t.label(:password, "Password:") %>
   
-    <%= x.password_field :password , class: "form-control", placeholder: "Password"%>
+    <%= t.password_field :password , class: "form-control", placeholder: "Password"%>
   
   </div>
    <div class="form-group">
 
-    <%= x.label(:password_confirmation, "Password:") %>
+    <%= t.label(:password_confirmation, "Password:") %>
 
-    <%= x.password_field :password_confirmation, class: "form-control", placeholder: "Re-Enter Password"%>
+    <%= t.password_field :password_confirmation, class: "form-control", placeholder: "Re-Enter Password"%>
   
   </div>
   
-  <%= x.submit "Submit" %>
+  <%= t.submit "Submit" %>
 
 <% end %>

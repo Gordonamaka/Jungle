@@ -42,6 +42,8 @@ class OrdersController < ApplicationController
       total_cents: cart_subtotal_cents,
       stripe_charge_id: stripe_charge.id, # returned by stripe
     )
+    
+    order.save!
 
     enhanced_cart.each do |entry|
       product = entry[:product]
