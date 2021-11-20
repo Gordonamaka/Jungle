@@ -31,7 +31,7 @@ RSpec.feature "AddProductToCarts", type: :feature, js: true do
     expect(page).to have_text('My Cart (1)')
 
     page.save_screenshot
-
+    
   end
 
 end 
