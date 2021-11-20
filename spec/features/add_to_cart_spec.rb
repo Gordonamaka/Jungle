@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to product detail page", type: :feature, js: true do
+RSpec.feature "AddProductToCarts", type: :feature, js: true do
 
+  # SETUP
   before :each do
     @category = Category.create! name: 'Apparel'
 
@@ -16,18 +17,21 @@ RSpec.feature "Visitor navigates to product detail page", type: :feature, js: tr
     end
   end
 
-  scenario "They can see a product's details after clicking on a product" do
-    # ACT
+  scenario "They see all products" do
+    
     visit root_path
 
-    within ".products" do
-      first('h4').click
-    end
+    
+    expect(page).to have_text('My Cart (0)')
 
-    # VERIFY
-    expect(page).to have_css 'article.product-detail', count: 1
+    
+    first('article.product').find_button('Add').click
 
-    #Save
-    save_screenshot
+ 
+    expect(page).to have_text('My Cart (1)')
+
+    page.save_screenshot
+
   end
-end
+
+end 
