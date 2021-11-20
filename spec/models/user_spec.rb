@@ -72,14 +72,14 @@ RSpec.describe User, type: :model do
   end 
 
 
-    describe '.authenticate_with_credentials' do
+  describe '.authenticate_with_credentials' do
 
       it "returns an instance of the user model if an existing user tries to login with the correct email and password" do
-        @user = User.new({password: 'Wario', password_confirmation: 'Wario', email: 'Wario@gmail.com', first_name: "Catty", last_name: "Savage" })
+        @user = User.new({password: 'wario', password_confirmation: 'wario', email: 'wario@gmail.com', first_name: "Catty", last_name: "Savage" })
 
         @user.save
 
-        expect(User.authenticate_with_credentials('Wario@gmail.com', 'Wario' )).to eq(@user)
+        expect(User.authenticate_with_credentials('wario@gmail.com', 'wario' )).to eq(@user)
       end
 
 
@@ -100,19 +100,21 @@ RSpec.describe User, type: :model do
       end
 
       it "returns an instance of the user model if an existing user tries to login with the correct email(with inconsistences in the case of the characters) and password"do
-        @user = User.new({password: 'Wario', password_confirmation: 'Wario', email: 'Wario@gmail.com', first_name: "Catty", last_name: "Savage" })
-
-        @user.save
-
-        expect(User.authenticate_with_credentials('wArIo@gmail.com','Wario')).to eq(@user)
-      end
-
-      it  "returns an instance of the user model if an existing user tries to login with the correct email(with some extra whitespace characters added to the start of the input) and correct password" do
-      @user = User.new({password: 'Wario', password_confirmation: 'Wario', email: 'Wario@gmail.com', first_name: "Catty", last_name: "Savage" })
+      @user = User.new({password: 'princess', password_confirmation: 'princess', email: 'princess@gmail.com', first_name: "Luigi", last_name: "Daisy" })
 
       @user.save
 
-      expect(User.authenticate_with_credentials('    Wario@gmail.com', 'Wario')).to eq(@user)
+      expect(User.authenticate_with_credentials('PriNcess@gmail.com','princess')).to eq(@user)
+      end
+
+    
+
+      it "returns an instance of the user model if an existing user tries to login with the correct email(with some extra whitespace characters added to the start of the input) and correct password" do
+      @user = User.new({password: 'princess', password_confirmation: 'princess', email: 'princess@gmail.com', first_name: "Luigi", last_name: "Daisy" })
+
+      @user.save
+
+      expect(User.authenticate_with_credentials('    princess@gmail.com', 'princess')).to eq(@user)
     end
   end
 end
